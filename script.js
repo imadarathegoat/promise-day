@@ -6,16 +6,16 @@ const message = document.getElementById("message");
 const replayBtnContainer = document.getElementById("replayBtnContainer");
 
 const promises = [
-  // "That day, we watched them promise forever...",
-  // "And I kept thinking...",
-  // "If I ever make a promise...",
-  // "I want it to be just as real...",
-  // "Just as strong...",
-  // "Just as endless...",
-  // "So today...",
-  // "I promise to stay by your side.",
-  // "No matter what...",
-  // "Just like that promise we watched together...",
+  "That day, we watched them promise forever...",
+  "And I kept thinking...",
+  "If I ever make a promise...",
+  "I want it to be just as real...",
+  "Just as strong...",
+  "Just as endless...",
+  "So today...",
+  "I promise to stay by your side.",
+  "No matter what...",
+  "Just like that promise we watched together...",
   "This one is mine… and it’s for you.",
 ];
 
