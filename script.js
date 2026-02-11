@@ -7,37 +7,23 @@ const replayBtnContainer = document.getElementById("replayBtnContainer");
 const replayBtn = document.getElementById("replayBtn");
 const audio = document.getElementById("audio");
 
-const promises = [
-  "That day, we watched them promise forever...",
-  "And I kept thinking...",
-  "If I ever make a promise...",
-  "I want it to be just as real...",
-  "Just as strong...",
-  "Just as endless...",
-  "So today...",
-  "I promise to stay by your side.",
-  "No matter what.",
-  "Just like that promise we watched together...",
-  "This one is mine… and it’s for you."
-];
+const promises = ["This one is mine… and it’s for you."];
 
 startBtn.addEventListener("click", startExperience);
-replayBtn.addEventListener("click", startExperience);
+replayBtn.addEventListener("click", replayAudio);
 
 function startExperience() {
   intro.style.display = "none";
-  replayBtnContainer.classList.add("hidden");
+  replayBtnContainer.classList.remove("show");
+  replayBtnContainer.style.display = "none";
   scene.classList.remove("hidden");
   content.classList.remove("hidden");
   message.style.opacity = 0;
 
-  audio.pause();
-  audio.currentTime = 0;
-
   setTimeout(() => {
     scene.style.display = "none";
     showPromises(0);
-  }, 7000);
+  }, 4000);
 }
 
 function showPromises(index) {
@@ -50,19 +36,18 @@ function showPromises(index) {
       setTimeout(() => showPromises(index + 1), 800);
     }, 5000);
   } else {
-    showFinalAudio();
+    message.style.opacity = 1;
+    replayBtnContainer.style.display = "block";
+    setTimeout(() => {
+      replayBtnContainer.classList.add("show");
+    }, 50);
   }
 }
 
-function showFinalAudio() {
-  message.innerHTML = `<h2 style="font-size:32px; color:#ffb6c1; animation: glow 2s infinite alternate;">
-    And this one… is forever. ❤️
-  </h2>`;
-  
+function replayAudio() {
+  audio.pause();
   audio.currentTime = 0;
-  audio.play();
-
-  audio.onended = () => {
-    replayBtnContainer.classList.remove("hidden");
-  };
+  audio.play().catch(() => {
+    console.log("Audio playback started after user interaction");
+  });
 }
