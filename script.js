@@ -4,30 +4,24 @@ const scene = document.getElementById("scene");
 const content = document.querySelector(".content");
 const message = document.getElementById("message");
 const replayBtnContainer = document.getElementById("replayBtnContainer");
-const replayBtn = document.getElementById("replayBtn");
-const audio = document.getElementById("audio");
 
 const promises = [
-  "That day, we watched them promise forever...",
-  "And I kept thinking...",
-  "If I ever make a promise...",
-  "I want it to be just as real...",
-  "Just as strong...",
-  "Just as endless...",
-  "So today...",
-  "I promise to stay by your side.",
-  "No matter what.",
-  "Just like that promise we watched together...",
+  // "That day, we watched them promise forever...",
+  // "And I kept thinking...",
+  // "If I ever make a promise...",
+  // "I want it to be just as real...",
+  // "Just as strong...",
+  // "Just as endless...",
+  // "So today...",
+  // "I promise to stay by your side.",
+  // "No matter what...",
+  // "Just like that promise we watched together...",
   "This one is mine… and it’s for you.",
 ];
 
-startBtn.addEventListener("click", startExperience);
-replayBtn.addEventListener("click", replayAudio);
-
-function startExperience() {
-  audio.play().catch(() => {});
+startBtn.addEventListener("click", () => {
   intro.style.display = "none";
-  replayBtnContainer.classList.remove("show");
+  replayBtnContainer.classList.add("hidden");
   replayBtnContainer.style.display = "none";
   scene.classList.remove("hidden");
   content.classList.remove("hidden");
@@ -37,7 +31,7 @@ function startExperience() {
     scene.style.display = "none";
     showPromises(0);
   }, 4000);
-}
+});
 
 function showPromises(index) {
   if (index < promises.length) {
@@ -52,15 +46,7 @@ function showPromises(index) {
     message.style.opacity = 1;
     replayBtnContainer.style.display = "block";
     setTimeout(() => {
-      replayBtnContainer.classList.add("show");
+      replayBtnContainer.classList.add("visible");
     }, 50);
   }
-}
-
-function replayAudio() {
-  audio.pause();
-  audio.currentTime = 0;
-  audio.play().catch(() => {
-    console.log("Audio playback started after user interaction");
-  });
 }
