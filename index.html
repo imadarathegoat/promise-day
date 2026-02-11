@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Our Promise ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="intro">
+      <h1>Do you remember that promise?</h1>
+      <p>The one we watched together...</p>
+      <button id="startBtn">Relive It ❤️</button>
+    </div>
+
+    <div class="scene hidden" id="scene">
+      <img src="jjk-promise.jpg" alt="Yuta and Rika Promise" />
+      <p class="scene-text">
+        That day… when Yuta and Rika promised each other forever...
+      </p>
+    </div>
+
+    <div class="content hidden">
+      <div class="stars"></div>
+      <div class="message" id="message"></div>
+      <div id="replayBtnContainer" class="hidden">
+        <button id="replayBtn">🔁 Replay ❤️</button>
+      </div>
+    </div>
+
+    <audio id="audio" preload="auto">
+      <source src="promise.m4a" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
