@@ -25,6 +25,7 @@ startBtn.addEventListener("click", startExperience);
 replayBtn.addEventListener("click", replayAudio);
 
 function startExperience() {
+  audio.play().catch(() => {});
   intro.style.display = "none";
   replayBtnContainer.classList.remove("show");
   replayBtnContainer.style.display = "none";
